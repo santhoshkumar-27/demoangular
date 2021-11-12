@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, FormArray } from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'demoangular';
+  userForm: FormGroup;
+
+  constructor(){
+    this.userForm = new FormGroup({
+      'fname': new FormControl(),
+      'lname': new FormControl()
+
+    })
+  }
 }
